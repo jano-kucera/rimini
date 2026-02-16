@@ -3,6 +3,12 @@
 @import 'tailwindcss';
 @import 'vanilla-calendar-pro/styles/index.css';
 
+[data-vc-theme='light']
+  .vc-date[data-vc-date-disabled]:not(.vc-date[data-vc-date-selected])
+  .vc-date__btn {
+  color: #0f172a;
+}
+
 [data-vc-theme='light'] .vc-date[data-vc-date-selected][data-vc-date-month='next'] .vc-date__btn {
   background-color: rgb(6 182 212 / var(--tw-bg-opacity)) !important;
   color: #fff !important;
