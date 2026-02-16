@@ -17,7 +17,6 @@
           "builder": "@angular/build:application",
           "options": {
             "browser": "src/main.ts",
-            "baseHref": "./",
             "tsConfig": "tsconfig.app.json",
             "assets": [
               {
@@ -69,6 +68,7 @@
         "deploy": {
           "builder": "angular-cli-ghpages:deploy",
           "options": {
+            "baseHref": "https://jano-kucera.github.io/rimini/",
             "branch": "gh-pages",
             "dir": "dist/rimini/browser",
             "repo": "https://github.com/jano-kucera/rimini.git"
