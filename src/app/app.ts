@@ -1,17 +1,27 @@
 import { AfterViewInit, Component, signal } from '@angular/core';
-import { provideNativeDateAdapter } from '@angular/material/core';
-import { MatCalendar } from '@angular/material/datepicker';
 import { RouterOutlet } from '@angular/router';
 import { Calendar } from 'vanilla-calendar-pro';
+import { ClipboardModule } from '@angular/cdk/clipboard';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [ClipboardModule, RouterOutlet],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App implements AfterViewInit {
   protected readonly title = signal('rimini');
+
+  readonly IBAN = "SK17 1100 0000 0029 1563 5898";
+
+  copied = signal(false);
+
+  copyIban(): void {
+    this.copied.set(true);
+    setTimeout(() => {
+      this.copied.set(false);
+    }, 2000);
+  }
 
   ngAfterViewInit(): void {
     const from = '2026-07-26';
